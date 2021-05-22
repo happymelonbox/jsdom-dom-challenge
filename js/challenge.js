@@ -65,4 +65,16 @@ pause.addEventListener('click', function(){
         return ex = setting
 }})
 
+let commentForm = document.getElementById('comment-form')
+let commentValue = document.getElementById('comment-input')
+let comments = document.getElementById('list')
+
+commentForm.addEventListener('submit', function(event){
+    comments.appendChild(document.createElement('ul'))
+    let li = comments.appendChild(document.createElement('li'))
+    let texty = li.appendChild(document.createTextNode(commentValue.value))
+    commentValue.value = ''
+    event.preventDefault()
+})
+
 })
