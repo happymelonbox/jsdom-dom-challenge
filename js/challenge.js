@@ -34,4 +34,10 @@ minus.addEventListener('click', function(){
     console.log(count)
 })
 
+plus.addEventListener('click', function(){
+    count = count + 1
+    display.innerHTML = count
+    console.log(count)
+})
+
 })
