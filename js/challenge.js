@@ -31,13 +31,38 @@ let pause = document.getElementById('pause')
 minus.addEventListener('click', function(){
     count = count - 1
     display.innerHTML = count
-    console.log(count)
 })
-
+//Increment counter
 plus.addEventListener('click', function(){
     count = count + 1
     display.innerHTML = count
-    console.log(count)
 })
+
+//Like counter - adds the likes under the heart
+heart.addEventListener('click', function(){
+    let like = count
+    let hearts = heart.innerHTML
+    heart.insertAdjacentHTML('beforeend', `<p>${like}</p>`)
+    console.log(hearts)
+})
+
+//Pause buttom - must be a cleaner way to do this.
+pause.addEventListener('click', function(){
+    if (pause.innerHTML === ' pause '){
+        pause.innerHTML = ' resume '
+        minus.disabled = true
+        plus.disabled = true
+        heart.disabled = true
+        clearInterval(ex)
+        return ex
+    } else {
+        pause.innerHTML = ' pause '
+        minus.disabled = false
+        plus.disabled = false
+        heart.disabled = false
+        let setting = setInterval(function(){++count
+            display.innerHTML = count}, 1000)
+        return ex = setting
+}})
 
 })
